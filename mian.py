@@ -1,8 +1,5 @@
 # MyKey_decrypt = eval(input("input MyKey_decrypt :"))
 # MyKey_encrypt = eval(input("input MyKey_encrypt :"))
-from uu import Error
-
-from _pytest.monkeypatch import K
 
 
 MyKey_encrypt = 'asoi()&*)HNB(G2nli34u778whfap;lnaoiuagda)'
@@ -14,7 +11,7 @@ password = '0ASGOI097*&%)_'
 
 def encrypt(key_decrypt,MyKey_encrypt):
     if key_decrypt[0] == '1':
-        Error("Already encrtpted !")
+        quit()
     else:
         key_decrypt = key_decrypt[1:]
     key_encrypt = ""
@@ -26,7 +23,7 @@ def encrypt(key_decrypt,MyKey_encrypt):
 
 def decrypt(key_encrypt,MyKey_decrypt):
     if key_encrypt[0] == '0':
-        Error("Already decrtpted !")
+        quit()
     else:
         key_encrypt = key_encrypt[1:]
     key_decrypt = ""
