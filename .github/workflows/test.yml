@@ -1,0 +1,34 @@
+name: test
+
+on:
+  push:
+
+permissions: write-all
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Run main
+      run: |
+        git pull
+        python temp.py
+        3
+        2s
+    
+    - name: Commit files
+      run: |
+        git init
+        git config --local user.email "l921832312@qq.com"
+        git config --local user.name "Jayliu9218"
+        git commit -m "AUTO"
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+            
+    
