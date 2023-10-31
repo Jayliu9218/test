@@ -1,4 +1,8 @@
-a = eval(input("a:"))
-b = eval(input("a:"))
+import os, sys
 
-print(a+b)
+try:  
+    print(os.environ['GITHUB_TOKEN'])
+except KeyError:
+    print('Please define the environment variable GITHUB_TOKEN')
+    sys.exit(1)
+
