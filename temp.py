@@ -1,5 +1,6 @@
 import os, sys
 
+
 try:  
     print(os.environ['GITHUB_TOKEN'])
     GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
@@ -7,19 +8,21 @@ except KeyError:
     print('Please define the environment variable GITHUB_TOKEN')
     sys.exit(1)
 
-
-print(type(GITHUB_TOKEN))
-print(len(GITHUB_TOKEN))
-for i in GITHUB_TOKEN:
-    print(i,end="")
-print(GITHUB_TOKEN+'0')
-
 # MyKey_decrypt = eval(input("input MyKey_decrypt :"))
 # MyKey_encrypt = eval(input("input MyKey_encrypt :"))
 
 
-MyKey_encrypt = 'asoi()&*)HNB(G2nli34u778whfap;lnaoiuagda)'
-MyKey_decrypt = 'asoi()&*)HNB(G2nli34u778whfap;lnaoiuagda)'
+MyKey_encrypt = GITHUB_TOKEN
+MyKey_decrypt = GITHUB_TOKEN
+MyKey_decrypt = os.environ['GITHUB_TOKEN']
+MyKey_encrypt = os.environ['GITHUB_TOKEN']
+print(type(GITHUB_TOKEN))
+print(len(GITHUB_TOKEN))
+temp = ""
+for i in GITHUB_TOKEN:
+    temp+=i
+    print(i,end="")
+print(temp)
 # MyKey_decrypt = MyKey_encrypt[::-1]
 
 password = '0ASGOI097*&%)_'
@@ -49,16 +52,8 @@ def decrypt(key_encrypt,MyKey_decrypt):
     return key_decrypt
 
 
-if MyKey_decrypt:
-    password_decrypted = decrypt(password, MyKey_decrypt)
-else:
-    password_decrypted = ''
-    pass
-
-
-# main
-pass
-
+print(11)
+print("* "*10)
 password_encrypted = encrypt(password,MyKey_encrypt)
 password_decrypted = decrypt(password_encrypted,MyKey_decrypt)
 with open("info.txt",'w')as f:
