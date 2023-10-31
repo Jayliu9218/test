@@ -61,7 +61,7 @@ pass
 
 password_encrypted = encrypt(password,MyKey_encrypt)
 password_decrypted = decrypt(password_encrypted,MyKey_decrypt)
-with open("password.txt",'w')as f:
+with open("info.txt",'w')as f:
     f.write(password_encrypted+'\n'+password_decrypted)
 print("password_encrypted : ",password_encrypted)
 print("password_decrypted : ",password_decrypted)
