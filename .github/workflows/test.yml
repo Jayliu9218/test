@@ -32,7 +32,7 @@ jobs:
         git init
         git config --local user.email "l921832312@qq.com"
         git config --local user.name "Jayliu9218"
-        git add .
+        git add info.txt
         git commit -m "AUTO"
         
     - name: Push changes
