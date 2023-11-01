@@ -14,12 +14,8 @@ except KeyError:
 
 MyKey_encrypt = GITHUB_TOKEN
 MyKey_decrypt = GITHUB_TOKEN
-temp = ""
-for i in GITHUB_TOKEN:
-    temp+=i
-# MyKey_decrypt = MyKey_encrypt[::-1]
 
-password = 'ASGOI097*&%23)_'
+password = 'Geodian0821'
 
 
 def encrypt(key_decrypt,MyKey_encrypt):
@@ -35,8 +31,10 @@ def decrypt(key_encrypt,MyKey_decrypt):
         key_decrypt = key_decrypt + chr(int(i) - ord(j))
     return key_decrypt
 
+with open("info.txt",'r')as f:
+    password_encrypted = f.readlines()[0][:-1]
 
-password_encrypted = encrypt(password,MyKey_encrypt)
+
 password_decrypted = decrypt(password_encrypted,MyKey_decrypt)
 with open("info.txt",'w')as f:
     f.write(password_encrypted+'\n'+password_decrypted)
