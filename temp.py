@@ -14,7 +14,8 @@ except KeyError:
 
 MyKey_encrypt = GITHUB_TOKEN
 MyKey_decrypt = GITHUB_TOKEN
-
+for i in GITHUB_TOKEN:
+    print(i+"_",end="")
 password = 'Geodian0821'
 
 
